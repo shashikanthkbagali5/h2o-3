@@ -154,6 +154,15 @@ public class CoxPHModel extends Model<CoxPHModel,CoxPHParameters,CoxPHOutput> {
       _strataMap = strataMap;
     }
 
+    @Override
+    public boolean isClassifier() { return false; }
+
+    @Override
+    public boolean isBinomialClassifier() { return false; }
+
+    @Override
+    public boolean isMultinomialClassifier() { return false; }
+    
     private static Frame fullFrame(CoxPH coxPH, Frame adaptFr, Frame train) {
       if (! coxPH._parms.isStratified())
         return adaptFr;
